@@ -12,5 +12,7 @@ import com.CalcularIMC.imc.view.VistaCalculadoraIMC;
  * @author Carmen Monge Montes
  */
 public class IMCController {
+    private final CalculadoraIMC modelo;
+    private final VistaCalculadoraIMC vista;
     
 }
