@@ -9,6 +9,7 @@ package com.CalcularIMC.imc.model;
  * @author Carmen Monge Montes
  */
 public class CalculadoraIMC {
+    
     final String BAJOP = "Bajo Peso";
     final String PNORMAL = "Peso Normal";
     final String SOBREP = "Sobrepeso";
@@ -33,5 +34,4 @@ public class CalculadoraIMC {
         }
         return clasi;
     }
-
 }
