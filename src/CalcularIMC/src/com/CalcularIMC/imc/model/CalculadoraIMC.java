@@ -12,7 +12,7 @@ public class CalculadoraIMC {
     
     // Calcula el IMC
     public double calcular(double peso, double altura){
-        return 1.2;
+        return altura*altura/peso;
     }
     
     // Devuelve la clasificación según el IMC
