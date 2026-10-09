@@ -32,7 +32,7 @@ public class IMCController implements ActionListener{
             
             esValido = txt.matches(regex);
             if(!esValido){
-                throw new NumberFormatException("Formato numérico no válido");
+                throw new NumberFormatException("Error: Datos inválidos");
             }
         }catch(NumberFormatException e){
             esValido=false;
@@ -42,7 +42,14 @@ public class IMCController implements ActionListener{
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        double peso, altura;
+        if(esValido(vista.getTxtPeso())&& esValido(vista.getTxtAltura())){
+            peso=Double.parseDouble(vista.getTxtPeso());
+            altura=Double.parseDouble(vista.getTxtAltura());
+            calculadora.calcular(peso, altura);
+        }else{
+            vista.mostrarMensajeError(mensaje);
+        }
     }
     
     

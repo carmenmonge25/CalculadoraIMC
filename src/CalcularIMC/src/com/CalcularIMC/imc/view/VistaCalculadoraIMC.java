@@ -36,9 +36,10 @@ public class VistaCalculadoraIMC extends javax.swing.JFrame {
     public String getTxtAltura() {
         /**
          * Devuelve el contenido del txtAltura como cadena sin espacios al 
-         * inicio y al final.
+         * inicio y al final y quitar los ceros de delante.
          */
-        return txtAltura.getText().trim();
+        String regex="^0+(?!$)";
+        return txtAltura.getText().trim().replaceFirst(regex, "");
     }
 
     /**
@@ -47,9 +48,10 @@ public class VistaCalculadoraIMC extends javax.swing.JFrame {
     public String getTxtPeso() {
         /**
          * Devuelve el contenido del txtPeso como cadena sin espacios al 
-         * inicio y al final.
+         * inicio y al final y quitar los ceros de delante.
          */
-        return txtPeso.getText().trim();
+        String regex="^0+(?!$)";
+        return txtPeso.getText().trim().replaceFirst(regex, "");
     }
     
     /**
