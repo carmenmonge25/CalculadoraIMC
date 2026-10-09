@@ -34,18 +34,27 @@ public class VistaCalculadoraIMC extends javax.swing.JFrame {
      * @return la altura
      */
     public String getTxtAltura() {
-        return txtAltura;
+        /**
+         * Devuelve el contenido del txtAltura como cadena sin espacios al 
+         * inicio y al final.
+         */
+        return txtAltura.getText().trim();
     }
 
     /**
      * @return el peso
      */
     public String getTxtPeso() {
-        return txtPeso;
+        /**
+         * Devuelve el contenido del txtPeso como cadena sin espacios al 
+         * inicio y al final.
+         */
+        return txtPeso.getText().trim();
     }
     
     /**
-     * Muestra la calificación que ha obtenido el usuario
+     * Muestra la calificación que ha obtenido el usu
+     * @param mensaje de la calificación correspondiente
      */
     public void mostrarClasificacion(String mensaje) {
         lblClasificacion.setText(mensaje);
@@ -53,6 +62,7 @@ public class VistaCalculadoraIMC extends javax.swing.JFrame {
 
     /**
      * Muestra el mensaje de error correspondiente en rojo
+     * @param mensaje del error correspondiente que ha cometido el usuario
      */
     public void mostrarMensajeError(String mensaje) {
         lblMensajeError.setForeground(new java.awt.Color(255, 0, 0));//Texto rojo
