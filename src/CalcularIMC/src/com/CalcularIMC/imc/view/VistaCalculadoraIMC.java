@@ -4,20 +4,70 @@
  */
 package com.CalcularIMC.imc.view;
 
+import javax.swing.JButton;
+
 /**
  *
- * @author carme
+ * @author Carmen Monge Montes
  */
 public class VistaCalculadoraIMC extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VistaCalculadoraIMC.class.getName());
+    
 
     /**
      * Creates new form VistaCalculadoraIMC
      */
     public VistaCalculadoraIMC() {
         initComponents();
+        setLocationRelativeTo(null);// Para ventrar la vista en la pantalla
     }
+    
+    /**
+     * @return el botón calcular
+     */
+    public JButton getBtnCalcular() {
+        return btnCalcular;
+    }
+
+    /**
+     * @return la altura
+     */
+    public String getTxtAltura() {
+        return txtAltura;
+    }
+
+    /**
+     * @return el peso
+     */
+    public String getTxtPeso() {
+        return txtPeso;
+    }
+    
+    /**
+     * Muestra la calificación que ha obtenido el usuario
+     */
+    public void mostrarClasificacion(String mensaje) {
+        lblClasificacion.setText(mensaje);
+    }
+
+    /**
+     * Muestra el mensaje de error correspondiente en rojo
+     */
+    public void mostrarMensajeError(String mensaje) {
+        lblMensajeError.setForeground(new java.awt.Color(255, 0, 0));//Texto rojo
+        lblMensajeError.setText(mensaje);
+    }
+    
+    /**
+     * Limpia las casillas de texto y el mensaje de error
+     */
+    public void limpiarImformacion() {
+        txtPeso.setText("");
+        txtAltura.setText("");
+        lblMensajeError.setText("");
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -189,4 +239,5 @@ public class VistaCalculadoraIMC extends javax.swing.JFrame {
     private javax.swing.JTextField txtAltura;
     private javax.swing.JTextField txtPeso;
     // End of variables declaration//GEN-END:variables
+
 }
