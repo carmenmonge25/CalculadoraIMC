@@ -21,7 +21,17 @@ public class CalculadoraIMC {
     
     // Devuelve la clasificación según el IMC
     public String clasificar(double imc){
-        return "";
+        String clasi;
+        if(imc<18.5){
+            clasi=BAJOP;
+        }else if(imc<25){
+            clasi=PNORMAL;
+        }else if(imc<30){
+            clasi=SOBREP;
+        }else{
+            clasi=OBESO;
+        }
+        return clasi;
     }
 
 }
