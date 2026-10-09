@@ -4,6 +4,9 @@
  */
 package com.CalcularIMC.imc.controller;
 
+import com.CalcularIMC.imc.model.CalculadoraIMC;
+import com.CalcularIMC.imc.view.VistaCalculadoraIMC;
+
 /**
  *
  * @author Carmen Monge Montes
