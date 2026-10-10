@@ -17,6 +17,7 @@ public class IMCController implements ActionListener{
     
     private final VistaCalculadoraIMC vista = null;
     private final CalculadoraIMC calculadora = new CalculadoraIMC();
+    private String mensajeError;
 
     private boolean esValido(String txt){
         boolean esValido;
@@ -32,9 +33,11 @@ public class IMCController implements ActionListener{
             
             esValido = txt.matches(regex);
             if(!esValido){
-                throw new NumberFormatException("Error: Datos inválidos");
+                throw new NumberFormatException("Error: Introduce solo números "
+                        + "válidos");
             }
         }catch(NumberFormatException e){
+            mensajeError=e.getMessage();
             esValido=false;
         }
         return esValido;
@@ -48,7 +51,7 @@ public class IMCController implements ActionListener{
             altura=Double.parseDouble(vista.getTxtAltura());
             calculadora.calcular(peso, altura);
         }else{
-            vista.mostrarMensajeError(mensaje);
+            vista.mostrarMensajeError(mensajeError);
         }
     }
     

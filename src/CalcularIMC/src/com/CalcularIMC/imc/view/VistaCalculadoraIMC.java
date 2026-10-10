@@ -55,13 +55,21 @@ public class VistaCalculadoraIMC extends javax.swing.JFrame {
     }
     
     /**
-     * Muestra la calificación que ha obtenido el usu
+     * Muestra la calificación que ha obtenido el usuario
      * @param mensaje de la calificación correspondiente
      */
     public void mostrarClasificacion(String mensaje) {
-        lblClasificacion.setText(mensaje);
+        lblClasificacion.setText("Clasificación: "+mensaje);
     }
-
+    
+    /**
+     * Muestra el resultado de imc que ha obtenido el usuario
+     * @param imc obtenido 
+     */
+    public void mostrarResultado(double imc) {
+        lblResultado.setText("Tu IMC es: "+imc);//revisar formato
+    }
+    
     /**
      * Muestra el mensaje de error correspondiente en rojo
      * @param mensaje del error correspondiente que ha cometido el usuario
@@ -99,6 +107,7 @@ public class VistaCalculadoraIMC extends javax.swing.JFrame {
         lblTitulo = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         lblClasificacion = new javax.swing.JLabel();
+        lblResultado = new javax.swing.JLabel();
         lblMensajeError = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -133,14 +142,18 @@ public class VistaCalculadoraIMC extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblClasificacion, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblClasificacion, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+                    .addComponent(lblResultado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblClasificacion, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
+                .addComponent(lblResultado, javax.swing.GroupLayout.DEFAULT_SIZE, 21, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblClasificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -192,8 +205,8 @@ public class VistaCalculadoraIMC extends javax.swing.JFrame {
                 .addGap(12, 12, 12)
                 .addComponent(btnCalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -247,6 +260,7 @@ public class VistaCalculadoraIMC extends javax.swing.JFrame {
     private javax.swing.JLabel lblClasificacion;
     private javax.swing.JLabel lblMensajeError;
     private javax.swing.JLabel lblPeso;
+    private javax.swing.JLabel lblResultado;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JTextField txtAltura;
     private javax.swing.JTextField txtPeso;
